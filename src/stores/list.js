@@ -55,7 +55,7 @@ export const useListStore = defineStore({
       const oldCurrent = this.current
       const notification = new Notification('事項完成', {
         body: oldCurrent,
-        icon: 'https://github.com/rogeraabbccdd.png'
+        icon: 'https://www.ft.com/__origami/service/image/v2/images/raw/https://d1e00ek4ebabms.cloudfront.net/production/6a5117d9-aacb-450c-8ece-a259b2d0f295.jpg?source=next&amp;fit=scale-down&amp;quality=highest&amp;width=1067'
       })
       this.current = ''
       if (this.items.length > 0) {
