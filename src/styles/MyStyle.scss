@@ -1,0 +1,22 @@
+// Place SASS variable overrides here
+// $font-size-root: 18px;
+#home {
+  font-family: 'Diplomata SC', cursive;
+  letter-spacing: 5px;
+}
+
+.title {
+  color: white;
+  font-family: 'Amatic SC', cursive;
+  font-size: 3rem;
+  text-shadow: 0 0 10px rgba(255, 255, 0);
+  // letter-spacing: 2px;
+}
+
+.media {
+  margin-left: 1rem;
+}
+
+.bb {
+  font-size: 20px;
+}

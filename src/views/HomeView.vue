@@ -1,19 +1,31 @@
 <template lang="pug">
-v-row.text-center#home
-  v-col(cols="12")
-    h1 {{ currentText }}
-    h1 {{ timeText }}
-  v-col(cols="12")
-    v-btn.mx-3(icon color="green" v-if="status !== 1" @click="startTimer")
-      v-icon mdi-play
-    v-btn.mx-3(icon color="blue" v-else @click="pauseTimer")
-      v-icon mdi-pause
-    v-btn.mx-3(icon color="red" v-if="current.length > 0" @click="finishTimer(true)")
-      v-icon mdi-skip-next
+v-carousel(
+  height="750"
+  cycle
+  interval="4000"
+  light
+  hide-delimiter-background
+)
+  v-carousel-item(v-for="(pic, idx) in pics"
+  :key="idx"
+  :src="pic.src"
+  cover)
+v-container
+  v-row.text-center#home
+    v-col(cols="12")
+      h1 {{ currentText }}
+      h1 {{ timeText }}
+    v-col(cols="12")
+      v-btn.mx-3(icon color="green" v-if="status !== 1" @click="startTimer")
+        v-icon mdi-play
+      v-btn.mx-3(icon color="blue" v-else @click="pauseTimer")
+        v-icon mdi-pause
+      v-btn.mx-3(icon color="red" v-if="current.length > 0" @click="finishTimer(true)")
+        v-icon mdi-skip-next
 </template>
 
 <script setup>
-import { computed, ref } from 'vue'
+import { computed, reactive, ref } from 'vue'
 import { storeToRefs } from 'pinia'
 import { useListStore } from '@/stores/list'
 import { useSettingsStore } from '@/stores/settings'
@@ -73,5 +85,17 @@ const startTimer = () => {
     }, 1000)
   }
 }
+
+const pics = reactive([
+  {
+    src: 'https://d14h23u8rn264x.cloudfront.net/upload_files/fonlego-rwd/club/pomodoro-technique.jpg'
+  },
+  {
+    src: 'https://cdn2.ettoday.net/images/5138/5138597.jpg',
+  },
+  {
+    src: 'https://www.smartlinkin.com.tw/data/Article/2899/Article_f49a8c1804bc4da711e174e.jpg?v=20181126001',
+  }
+])
 
 </script>
