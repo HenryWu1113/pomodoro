@@ -4,7 +4,7 @@ import App from './App.vue'
 import router from './router'
 import vuetify from './plugins/vuetify'
 import { loadFonts } from './plugins/webfontloader'
-import './styles/MyStyle.scss';
+import './styles/style.scss';
 
 import { registerSW } from 'virtual:pwa-register'
 registerSW({

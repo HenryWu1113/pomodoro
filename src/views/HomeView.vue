@@ -1,38 +1,105 @@
 <template lang="pug">
-v-carousel(
-  height="750"
-  cycle
-  interval="4000"
-  light
-  hide-delimiter-background
-)
-  v-carousel-item(v-for="(pic, idx) in pics"
-  :key="idx"
-  :src="pic.src"
-  cover)
+//- v-carousel(
+//-   height="750"
+//-   cycle
+//-   interval="4000"
+//-   light
+//-   hide-delimiter-background
+//- )
+//-   v-carousel-item(v-for="(pic, idx) in pics"
+//-   :key="idx"
+//-   :src="pic.src"
+//-   cover)
 v-container
-  v-row.text-center#home
-    v-col(cols="12")
-      h1 {{ currentText }}
-      h1 {{ timeText }}
-    v-col(cols="12")
-      v-btn.mx-3(icon color="green" v-if="status !== 1" @click="startTimer")
-        v-icon mdi-play
-      v-btn.mx-3(icon color="blue" v-else @click="pauseTimer")
-        v-icon mdi-pause
-      v-btn.mx-3(icon color="red" v-if="current.length > 0" @click="finishTimer(true)")
-        v-icon mdi-skip-next
+  .circle1(v-if="$vuetify.theme.name==='dark'")
+    v-row.text-center
+      v-col(cols="12")
+        h1.font-weight-bold {{ currentText }}
+        h1.font-weight-bold.mt-5  {{ timeText }}
+      v-col(cols="12")
+        v-btn.mx-3(icon color="white" variant="outlined" v-if="status !== 1" @click="startTimer")
+          v-icon mdi-play
+        v-btn.mx-3(icon color="white" variant="outlined" v-else @click="pauseTimer")
+          v-icon mdi-pause
+        v-btn.mx-3(icon color="white" variant="outlined" v-if="current.length > 0" @click="finishTimer(true)")
+          v-icon mdi-skip-next
+    .circle1_small
+  .circle2(v-else)
+    v-row.text-center
+      v-col(cols="12")
+        h1.font-weight-bold {{ currentText }}
+        h1.font-weight-bold.mt-5   {{ timeText }}
+      v-col(cols="12")
+        v-btn.mx-3(icon color="black" variant="outlined" v-if="status !== 1" @click="startTimer")
+          v-icon mdi-play
+        v-btn.mx-3(icon color="black" variant="outlined" v-else @click="pauseTimer")
+          v-icon mdi-pause
+        v-btn.mx-3(icon color="black" variant="outlined" v-if="current.length > 0" @click="finishTimer(true)")
+          v-icon mdi-skip-next
 </template>
+
+<style scoped lang="scss">
+// html,
+// body {
+//   width: 100%;
+//   height: 100%;
+//   position: relative;
+// }
+
+// @keyframes shining {
+//   50% {
+//     filter: drop-shadow(0 0 0rem white);
+//   }
+// }
+
+// .circle1 {
+//   position: absolute;
+//   left: 50%;
+//   top: 50%;
+//   transform: translate(-50%, -50%);
+//   // margin: auto;
+//   width: 850px;
+//   aspect-ratio: 1 / 1;
+//   background: black;
+//   border-radius: 50%;
+//   border: 50px solid white;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   filter: drop-shadow(0 0 1rem white);
+//   animation: shining infinite ease-in-out 2s;
+// }
+
+// .circle2 {
+//   position: absolute;
+//   left: 50%;
+//   top: 50%;
+//   transform: translate(-50%, -50%);
+//   // margin: auto;
+//   width: 850px;
+//   aspect-ratio: 1 / 1;
+//   background: white;
+//   border-radius: 50%;
+//   border: 50px solid black;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   filter: drop-shadow(0 0 1rem black);
+//   animation: shining infinite ease-in-out 2s;
+// }
+</style>
 
 <script setup>
 import { computed, reactive, ref } from 'vue'
 import { storeToRefs } from 'pinia'
 import { useListStore } from '@/stores/list'
 import { useSettingsStore } from '@/stores/settings'
+import { useTheme } from 'vuetify'
 
 const list = useListStore()
 const { current, items, timeleft } = storeToRefs(list)
 const { countdown, start, finish } = list
+const theme = useTheme()
 
 const settings = useSettingsStore()
 const { selectedAlarmFile } = storeToRefs(settings)

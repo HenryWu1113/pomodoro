@@ -1,7 +1,8 @@
 <template lang="pug">
 v-app
-  v-app-bar(color="primary")
-    v-btn.title(to='./') Pomodoro
+  v-app-bar(color="accent" height="100")
+    v-btn.text-white.text-h2.font-weight-bold(to='./' v-if="$vuetify.theme.name==='dark'") Pomodoro
+    v-btn.text-black.text-h2.font-weight-bold(to='./' v-else) Pomodoro
     v-spacer
     v-btn(icon to='/')
       v-icon mdi-timer
@@ -19,7 +20,7 @@ v-app
     router-view(v-slot="{ Component }")
       keep-alive(include="HomeView")
         component(:is="Component")
-  footerPart
+  //- footerPart
   //- v-footer(dark padless fixed="bottom")
   //-   v-card(class="flex" flat tile width="100%")
   //-     v-card-title
@@ -40,7 +41,7 @@ v-app
 import { useTheme } from 'vuetify'
 import { storeToRefs } from 'pinia'
 import { useListStore } from '@/stores/list'
-import footerPart from './components/footerPart.vue'
+// import footerPart from './components/footerPart.vue'
 const list = useListStore()
 const { notify } = storeToRefs(list)
 const { toggleNotify } = list
