@@ -6,13 +6,13 @@
   // margin: auto;
   width: 90%;
   aspect-ratio: 1 / 1;
-  background: black;
+  // background: black;
   border-radius: 50%;
   border: 20px solid white;
   display: flex;
   justify-content: center;
   align-items: center;
-  filter: drop-shadow(0 0 1rem white);
+  box-shadow: 0 0 1rem white;
   animation: shining infinite ease-in-out 2s;
 
   .circle1_small {
@@ -61,6 +61,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  filter: drop-shadow(0 0 1rem black);
+  box-shadow: 0 0 1rem white;
   animation: shining infinite ease-in-out 2s;
 }

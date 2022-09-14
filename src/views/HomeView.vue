@@ -23,7 +23,7 @@ v-container
           v-icon mdi-pause
         v-btn.mx-3(icon color="white" variant="outlined" v-if="current.length > 0" @click="finishTimer(true)")
           v-icon mdi-skip-next
-    .circle1_small
+    .circle1_small.d-none.d-md-block
   .circle2(v-else)
     v-row.text-center
       v-col(cols="12")

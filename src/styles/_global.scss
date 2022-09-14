@@ -7,6 +7,6 @@ body {
 
 @keyframes shining {
   50% {
-    filter: drop-shadow(0 0 0rem white);
+    box-shadow: 0 0 0rem white;
   }
 }
