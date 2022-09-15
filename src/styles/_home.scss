@@ -49,7 +49,6 @@
   }
 
   @include md {
-    max-width: 900px;
     border: 40px solid white;
 
     h1:first-child {
@@ -114,7 +113,6 @@
   }
 
   @include md {
-    max-width: 900px;
     border: 40px solid black;
 
     h1:first-child {
