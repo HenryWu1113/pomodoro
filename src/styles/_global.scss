@@ -2,11 +2,23 @@ html,
 body {
   width: 100%;
   height: 100%;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
   position: relative;
 }
 
-@keyframes shining {
+body::-webkit-scrollbar {
+  display: none;
+}
+
+@keyframes shining1 {
   50% {
     box-shadow: 0 0 0rem white;
+  }
+}
+
+@keyframes shining2 {
+  50% {
+    box-shadow: 0 0 0rem black;
   }
 }

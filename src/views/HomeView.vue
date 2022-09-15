@@ -36,6 +36,7 @@ v-container
           v-icon mdi-pause
         v-btn.mx-3(icon color="black" variant="outlined" v-if="current.length > 0" @click="finishTimer(true)")
           v-icon mdi-skip-next
+    .circle2_small.d-none.d-md-block
 </template>
 
 <style scoped lang="scss">

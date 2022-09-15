@@ -13,16 +13,18 @@
   justify-content: center;
   align-items: center;
   box-shadow: 0 0 1rem white;
-  animation: shining infinite ease-in-out 2s;
+  animation: shining1 infinite ease-in-out 2s;
 
   .circle1_small {
     position: absolute;
     width: 300px;
     height: 300px;
     border-radius: 50%;
-    border: 10px solid white;
+    border: 20px solid white;
     right: -10%;
-    bottom: -10%;
+    bottom: -5%;
+    box-shadow: 0 0 1rem white;
+    animation: shining1 infinite ease-in-out 2s 0.3s;
   }
 
   h1:first-child {
@@ -45,6 +47,19 @@
       font-size: 3rem;
     }
   }
+
+  @include md {
+    max-width: 900px;
+    border: 40px solid white;
+
+    h1:first-child {
+      font-size: 4.5rem;
+    }
+
+    h1:last-child {
+      font-size: 3.5rem;
+    }
+  }
 }
 
 .circle2 {
@@ -55,12 +70,59 @@
   // margin: auto;
   width: 90%;
   aspect-ratio: 1 / 1;
-  background: white;
+  // background: black;
   border-radius: 50%;
-  border: 50px solid black;
+  border: 20px solid black;
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: 0 0 1rem white;
-  animation: shining infinite ease-in-out 2s;
+  box-shadow: 0 0 1rem black;
+  animation: shining2 infinite ease-in-out 2s;
+
+
+  .circle2_small {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    border: 20px solid black;
+    right: -10%;
+    bottom: -5%;
+    box-shadow: 0 0 1rem black;
+    animation: shining2 infinite ease-in-out 2s 0.3s;
+  }
+
+  h1:first-child {
+    font-size: 2.5rem;
+  }
+
+  h1:last-child {
+    font-size: 2rem;
+  }
+
+  @include sm {
+    max-width: 800px;
+    border: 30px solid black;
+
+    h1:first-child {
+      font-size: 3.5rem;
+    }
+
+    h1:last-child {
+      font-size: 3rem;
+    }
+  }
+
+  @include md {
+    max-width: 900px;
+    border: 40px solid black;
+
+    h1:first-child {
+      font-size: 4.5rem;
+    }
+
+    h1:last-child {
+      font-size: 3.5rem;
+    }
+  }
 }

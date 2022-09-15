@@ -2,7 +2,7 @@
 v-container
   v-row#list
     v-col(cols='12')
-      h1 待辦事項
+      h1.text-center 待辦事項
     v-col(cols='12')
       v-text-field(
         variant="underlined"
